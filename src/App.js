@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 const API_KEY = "9557d4bc";
-const BASE_URL = "http://www.omdbapi.com/";
+const BASE_URL = "https://www.omdbapi.com/";
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
