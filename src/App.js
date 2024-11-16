@@ -10,14 +10,16 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
-
+const [initialNoresults ,setinitialNoresults] = useState(false)
   useEffect(() => {
     fetchMovies("avengers");
   }, []);
 
   const fetchMovies = async (query) => {
+    
     try {
       const response = await axios.get(`${BASE_URL}?s=${query}&apikey=${API_KEY}`);
+      setinitialNoresults(true);
       if (response.data.Search) {
         setMovies(response.data.Search);
       } else {
@@ -25,6 +27,7 @@ function App() {
       }
     } catch (error) {
       console.error("Error fetching movie data:", error);
+      setinitialNoresults(true)
       setMovies([]);
     }
   };
@@ -85,7 +88,7 @@ function App() {
       </header>
 
       <div className="movie-list">
-        {movies.length > 0 ? (
+        {movies.length > 0  && initialNoresults == false ? (
           movies.map((movie) => (
             <div
               key={movie.imdbID}
