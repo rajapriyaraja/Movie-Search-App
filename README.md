@@ -1,4 +1,4 @@
-# Movie Search App
+<!-- # Movie Search App
 
 A simple movie search app built with React.js that uses the OMDb API to fetch and display movie data based on the user's search query. The app allows users to search for movies, view movie details, and get suggestions as they type.
 
@@ -79,4 +79,4 @@ Follow these steps to set up and run the project locally.
 
     2.   Replace YOUR_API_KEY with your actual OMDb API key.
     
-    3.   This will show you a JSON response with the movie search results.  
+    3.   This will show you a JSON response with the movie search results.   -->
